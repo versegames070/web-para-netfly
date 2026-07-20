@@ -321,8 +321,6 @@
       <li><a href="#sobre">Sobre nosotros</a></li>
       <li><a href="#catalogo">Catálogo</a></li>
       <li><a href="#reservas">Reservas</a></li>
-      <li><a href="#confianza">Por qué elegirnos</a></li>
-      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
     <a href="#contacto" class="nav-cta">Escríbenos</a>
@@ -330,11 +328,11 @@
 
   <section class="hero">
     <div class="eyebrow">Juegos digitales · PlayStation · Xbox</div>
-    <h1>Tu universo <span class="accent">gamer</span> comienza aquí</h1>
-    <p class="sub">Encuentra los mejores juegos digitales para PlayStation 4 y PlayStation 5, con entrega rápida, atención personalizada y precios competitivos.</p>
+    <h1>Tu <span class="accent">universo</span> de videojuegos</h1>
+    <p class="sub">Catálogo amplio, cuentas con garantía y pago a cuotas. Compra segura, rápida y con atención personalizada de principio a fin.</p>
     <div class="hero-ctas">
-      <a href="#catalogo" class="btn btn-primary">Explorar Catálogo</a>
-      <a href="https://wa.me/59165396819?text=Hola%20Verse%20Games%2C%20quiero%20consultar%20por%20un%20juego" target="_blank" rel="noopener" class="btn btn-ghost">Contactar por WhatsApp</a>
+      <a href="#catalogo" class="btn btn-primary">Ver catálogo</a>
+      <a href="#reservas" class="btn btn-ghost">Reservas desde 10 Bs</a>
     </div>
 
     <div class="constellation">
@@ -352,7 +350,7 @@
     </div>
   </section>
 
-  <section id="destacados" class="reveal">
+  <section id="destacados">
     <div class="section-head">
       <div class="eyebrow">🔥 Reserva anticipada</div>
       <h2>Juegos Destacados</h2>
@@ -399,7 +397,7 @@
     });
   </script>
 
-  <section id="ofertas" class="reveal">
+  <section id="ofertas">
     <div class="section-head">
       <div class="eyebrow">🔥 Por tiempo limitado</div>
       <h2>Ofertas del mes</h2>
@@ -484,26 +482,6 @@
     }
     .destacado-price span{ font-size:0.7rem; color:var(--dust); font-weight:400; text-transform:uppercase; margin-left:6px; }
     .destacado-btn{ width:100%; justify-content:center; }
-
-    /* ---------- glow en botones ---------- */
-    .btn-primary, .whatsapp-btn, .destacado-btn{
-      position:relative; overflow:hidden;
-    }
-    .btn-primary::after, .whatsapp-btn::after, .destacado-btn::after{
-      content:""; position:absolute; inset:0; border-radius:inherit;
-      box-shadow: 0 0 0 rgba(244,185,66,0); transition: box-shadow .3s ease;
-      pointer-events:none;
-    }
-    .btn-primary:hover::after, .destacado-btn:hover::after{ box-shadow: 0 0 24px 4px rgba(244,185,66,0.45); }
-    .whatsapp-btn:hover::after{ box-shadow: 0 0 24px 4px rgba(37,211,102,0.5); }
-
-    /* ---------- scroll reveal ---------- */
-    .reveal{ opacity:0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
-    .reveal.in-view{ opacity:1; transform: translateY(0); }
-    @media (prefers-reduced-motion: reduce){
-      .reveal{ opacity:1; transform:none; transition:none; }
-      .destacado-card{ animation:none; }
-    }
   </style>
 
   <script>
@@ -830,7 +808,7 @@ var VG_IMG = {
       offerWhatsAppOrder(btn.dataset.name, btn.dataset.version, btn.dataset.price);
     });
   </script>
-  <section id="sobre" class="reveal">
+  <section id="sobre">
     <div class="about-grid">
       <div>
         <div class="eyebrow">Sobre Verse Games</div>
@@ -852,55 +830,7 @@ var VG_IMG = {
     </div>
   </section>
 
-  <section id="confianza" class="reveal">
-    <div class="section-head">
-      <div class="eyebrow">Confianza</div>
-      <h2>¿Por qué elegir Verse Games?</h2>
-    </div>
-    <div class="trust-grid">
-      <div class="trust-card"><span class="ic">🎮</span><h4>Amplio catálogo de juegos</h4></div>
-      <div class="trust-card"><span class="ic">⚡</span><h4>Entrega digital rápida</h4></div>
-      <div class="trust-card"><span class="ic">💬</span><h4>Atención personalizada</h4></div>
-      <div class="trust-card"><span class="ic">💳</span><h4>Métodos de pago seguros</h4></div>
-      <div class="trust-card"><span class="ic">🔥</span><h4>Ofertas actualizadas constantemente</h4></div>
-    </div>
-  </section>
-
-  <section id="estadisticas" class="reveal">
-    <div class="stats-grid">
-      <div class="stat-card"><div class="stat-num">+100</div><div class="stat-label">Juegos disponibles</div></div>
-      <div class="stat-card"><div class="stat-num">+500</div><div class="stat-label">Clientes satisfechos</div></div>
-      <div class="stat-card"><div class="stat-num">24/7</div><div class="stat-label">Actualizaciones constantes</div></div>
-      <div class="stat-card"><div class="stat-num">⚡</div><div class="stat-label">Entrega digital rápida</div></div>
-    </div>
-  </section>
-
-  <style>
-    .trust-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap:18px; }
-    .trust-card{
-      border:1px solid var(--line); border-radius:16px; padding:26px 20px; text-align:center;
-      background: rgba(255,255,255,0.02); transition: transform .2s ease, border-color .2s ease;
-    }
-    .trust-card:hover{ transform: translateY(-4px); border-color: var(--ion); }
-    .trust-card .ic{ font-size:1.8rem; display:block; margin-bottom:14px; }
-    .trust-card h4{ font-family:'Space Grotesk',sans-serif; font-size:0.98rem; font-weight:600; line-height:1.4; }
-
-    #estadisticas{ padding-top:0; }
-    .stats-grid{
-      display:grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap:18px;
-      border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:44px 0;
-    }
-    .stat-card{ text-align:center; }
-    .stat-num{
-      font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(1.8rem,3.4vw,2.6rem);
-      background: linear-gradient(100deg, var(--comet), var(--ion));
-      -webkit-background-clip:text; background-clip:text; color:transparent;
-      margin-bottom:6px;
-    }
-    .stat-label{ color:var(--dust); font-size:0.85rem; }
-  </style>
-
-  <section id="catalogo" class="reveal">
+  <section id="catalogo">
     <div class="section-head">
       <div class="eyebrow">Catálogo</div>
       <h2>Explora nuestro universo de juegos</h2>
@@ -945,15 +875,6 @@ var VG_IMG = {
       position:relative;
     }
     .game-card:hover{ border-color:var(--comet); transform: translateY(-2px); }
-    .game-badge{
-      position:absolute; top:10px; left:10px; z-index:2;
-      font-family:'JetBrains Mono', monospace; font-size:0.62rem; font-weight:700; letter-spacing:0.04em;
-      text-transform:uppercase; padding:4px 10px; border-radius:999px; color:#fff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.35);
-    }
-    .badge-best{ background: linear-gradient(100deg, var(--star), #e08e1f); color:#241a02; }
-    .badge-new{ background: linear-gradient(100deg, var(--comet), var(--ion)); }
-    .badge-reserva{ background: rgba(45,212,224,0.9); color:#031a1c; }
     .game-card .g-body{ padding:14px 16px 16px; }
     .g-cover{
       width:100%; aspect-ratio: 3/4; object-fit:cover; display:block; background:rgba(255,255,255,0.03);
@@ -988,16 +909,16 @@ var VG_IMG = {
   <script>
 
     const VG_GAMES = [
-      {n:"Mortal Kombat 1", c:"Lucha", p1:159, p2:99, img:"59", badge:"Más Vendido"},
+      {n:"Mortal Kombat 1", c:"Lucha", p1:159, p2:99, img:"59"},
       {n:"Mortal Kombat 11 Ultimate", c:"Lucha", p1:89, p2:59, img:"61"},
       {n:"Mortal Kombat XL", c:"Lucha", p1:59, p2:39, img:"62"},
       {n:"Mortal Kombat 11 + Injustice 2", c:"Lucha", p1:99, p2:69, img:"60"},
-      {n:"Mortal Kombat Kaos", c:"Lucha", p1:239, p2:159, img:"130", badge:"Nuevo"},
+      {n:"Mortal Kombat Kaos", c:"Lucha", p1:239, p2:159, img:"130"},
       {n:"God of War III Remastered", c:"Acción / Aventura", p1:69, p2:39, img:"37"},
       {n:"God of War IV", c:"Acción / Aventura", p1:89, p2:59, img:"131"},
-      {n:"God of War Ragnarök (PS4 y PS5)", c:"Acción / Aventura", p1:199, p2:129, img:"132", badge:"Más Vendido"},
+      {n:"God of War Ragnarök (PS4 y PS5)", c:"Acción / Aventura", p1:199, p2:129, img:"132"},
       {n:"God of War Ragnarok (PS4)", c:"Acción / Aventura", p1:149, p2:99, img:"132"},
-      {n:"Spider-Man 2 Deluxe Edition", c:"Acción / Aventura", p1:249, p2:169, img:"55", badge:"Más Vendido"},
+      {n:"Spider-Man 2 Deluxe Edition", c:"Acción / Aventura", p1:249, p2:169, img:"55"},
       {n:"Assassin's Creed Mirage", c:"Acción / Aventura", p1:129, p2:89, img:"104"},
       {n:"Assassin's Creed Odyssey", c:"Acción / Aventura", p1:109, p2:79, img:"105"},
       {n:"Assassin's Creed Syndicate", c:"Acción / Aventura", p1:159, p2:109, img:"2"},
@@ -1012,13 +933,13 @@ var VG_IMG = {
       {n:"Resident Evil 4 Remake", c:"Terror", p1:159, p2:99, img:"133"},
       {n:"Resident Evil 7", c:"Terror", p1:79, p2:59, img:"75"},
       {n:"Resident Evil Village", c:"Terror", p1:99, p2:69, img:"77"},
-      {n:"Resident Evil Requiem", c:"Terror", p1:459, p2:389, img:"76", badge:"Nuevo"},
-      {n:"GTA V", c:"Mundo abierto", p1:159, p2:109, img:"38", badge:"Más Vendido"},
-      {n:"Red Dead Redemption 2", c:"Mundo abierto", p1:149, p2:99, img:"74", badge:"Más Vendido"},
+      {n:"Resident Evil Requiem", c:"Terror", p1:459, p2:389, img:"76"},
+      {n:"GTA V", c:"Mundo abierto", p1:159, p2:109, img:"38"},
+      {n:"Red Dead Redemption 2", c:"Mundo abierto", p1:149, p2:99, img:"74"},
       {n:"Watch Dogs 2", c:"Mundo abierto", p1:59, p2:39, img:"101"},
       {n:"Batman Arkham Knight", c:"Acción", p1:59, p2:39, img:"4"},
       {n:"DOOM Eternal", c:"Shooter", p1:119, p2:79, img:"18"},
-      {n:"Call of Duty Modern Warfare", c:"Shooter", p1:109, p2:79, img:"7", badge:"Más Vendido"},
+      {n:"Call of Duty Modern Warfare", c:"Shooter", p1:109, p2:79, img:"7"},
       {n:"Call of Duty WWII Gold", c:"Shooter", p1:119, p2:79, img:"9"},
       {n:"Battlefield 1 & V", c:"Shooter", p1:69, p2:49, img:"107"},
       {n:"Tekken 7 Edición Definitiva", c:"Lucha", p1:169, p2:99, img:"134"},
@@ -1036,7 +957,7 @@ var VG_IMG = {
       {n:"Need for Speed Heat", c:"Carreras", p1:69, p2:49, img:"65"},
       {n:"Forza Horizon 5", c:"Carreras", p1:329, p2:259, img:"32"},
       {n:"Astro Bot", c:"Plataformas", p1:299, p2:219, img:"3"},
-      {n:"Minecraft", c:"Sandbox", p1:149, p2:99, img:"58", badge:"Más Vendido"},
+      {n:"Minecraft", c:"Sandbox", p1:149, p2:99, img:"58"},
       {n:"Ark Survival Ascended", c:"Supervivencia", p1:199, p2:139, img:"1"},
       {n:"Dying Light 2", c:"Supervivencia", p1:89, p2:59, img:"22"},
       {n:"Silent Hill 2", c:"Terror", p1:199, p2:139, img:"82"},
@@ -1049,9 +970,9 @@ var VG_IMG = {
       {n:"Stray", c:"Aventura", p1:79, p2:49, img:"138"},
       {n:"Alan Wake 2", c:"Terror / Acción", p1:119, p2:89, img:"0"},
       {n:"Black Myth: Wukong", c:"Acción", p1:379, p2:299, img:"5"},
-      {n:"Hollow Knight: Silksong", c:"Plataformas", p1:129, p2:99, img:"42", badge:"Nuevo"},
+      {n:"Hollow Knight: Silksong", c:"Plataformas", p1:129, p2:99, img:"42"},
       {n:"NBA 2K26", c:"Deportes", p1:199, p2:129, img:"63"},
-      {n:"EA Sports FC / FIFA 26", c:"Deportes", p1:159, p2:99, img:"25", badge:"Más Vendido"},
+      {n:"EA Sports FC / FIFA 26", c:"Deportes", p1:159, p2:99, img:"25"},
       {n:"Ghost Recon Breakpoint", c:"Shooter táctico", p1:119, p2:79, img:"97"},
       {n:"Mad Max", c:"Acción", p1:49, p2:25, img:"53"},
       {n:"Rubber Bandits", c:"Party", p1:49, p2:25, img:"78"},
@@ -1065,9 +986,9 @@ var VG_IMG = {
       {n:"Unravel Two", c:"Plataformas", p1:79, p2:49, img:"99"},
       {n:"Mafia County", c:"Acción / Mundo abierto", p1:79, p2:49, img:"54"},
       {n:"Street Fighter 6", c:"Lucha", p1:179, p2:119, img:"87"},
-      {n:"Silent Hill f", c:"Terror", p1:199, p2:139, img:"83", badge:"Nuevo"},
+      {n:"Silent Hill f", c:"Terror", p1:199, p2:139, img:"83"},
       {n:"Titanfall 2: Ultimate Edition", c:"Shooter", p1:99, p2:69, img:"95"},
-      {n:"Ghost of Yōtei", c:"Acción", p1:249, p2:169, img:"35", badge:"Nuevo"},
+      {n:"Ghost of Yōtei", c:"Acción", p1:249, p2:169, img:"35"},
       {n:"MLB The Show 25", c:"Deportes", p1:179, p2:119, img:"52"},
       {n:"Gears of War: Reloaded", c:"Shooter", p1:159, p2:109, img:"34"},
       {n:"Top Spin Tennis", c:"Deportes", p1:199, p2:129, img:"140"},
@@ -1110,8 +1031,8 @@ var VG_IMG = {
       {n:"Devil May Cry 5 Deluxe", c:"Acción", p1:149, p2:99, img:"15"},
       {n:"Tomb Raider Remastered", c:"Aventura", p1:119, p2:79, img:"98"},
       {n:"Resident Evil Saga", c:"Terror", p1:199, p2:129, img:"106"},
-      {n:"Doom The Dark", c:"Shooter", p1:119, p2:79, img:"19", badge:"Nuevo"},
-      {n:"Pragmata", c:"Sci-fi", p1:499, p2:399, img:"69", badge:"Nuevo"},
+      {n:"Doom The Dark", c:"Shooter", p1:119, p2:79, img:"19"},
+      {n:"Pragmata", c:"Sci-fi", p1:499, p2:399, img:"69"},
       {n:"Jujutsu Kaisen", c:"Anime", p1:149, p2:99, img:"47"},
       {n:"Beam Driver PS5", c:"Simulación", p1:99, p2:69, img:"142"},
       {n:"Resident Evil 4 Remake Gold", c:"Terror", p1:199, p2:129, img:"143"},
@@ -1163,7 +1084,6 @@ var VG_IMG = {
       });
       grid.innerHTML = results.map(g => `
         <div class="game-card">
-          ${g.badge ? `<span class="game-badge badge-${g.badge === 'Más Vendido' ? 'best' : g.badge === 'Nuevo' ? 'new' : 'reserva'}">${g.badge}</span>` : ''}
           ${g.img && VG_IMG[g.img] ? `<img class="g-cover" src="${VG_IMG[g.img]}" alt="${esc(g.n)}" loading="lazy">` : `<div class="g-cover-fallback">🎮</div>`}
           <div class="g-body">
             <span class="g-cat">${g.c}</span>
@@ -1184,7 +1104,7 @@ var VG_IMG = {
     render();
   </script>
 
-  <section id="reservas" class="reveal">
+  <section id="reservas">
     <div class="reserva-box">
       <div>
         <div class="eyebrow">Reservas</div>
@@ -1200,87 +1120,7 @@ var VG_IMG = {
     </div>
   </section>
 
-  <section id="como-comprar" class="reveal">
-    <div class="section-head">
-      <div class="eyebrow">Proceso simple</div>
-      <h2>Cómo comprar</h2>
-    </div>
-    <div class="steps-grid">
-      <div class="step-card"><div class="step-num">1</div><h4>Elige tu juego</h4><p>Busca en el catálogo o en las ofertas del mes.</p></div>
-      <div class="step-card"><div class="step-num">2</div><h4>Contáctanos</h4><p>Escríbenos por WhatsApp con el juego elegido.</p></div>
-      <div class="step-card"><div class="step-num">3</div><h4>Realiza el pago</h4><p>Te indicamos las opciones disponibles.</p></div>
-      <div class="step-card"><div class="step-num">4</div><h4>Recibe y juega</h4><p>Entrega digital rápida, listo para disfrutar.</p></div>
-    </div>
-  </section>
-
-  <section id="faq" class="reveal">
-    <div class="section-head">
-      <div class="eyebrow">Dudas frecuentes</div>
-      <h2>Preguntas frecuentes</h2>
-    </div>
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary>¿Qué es una cuenta Primaria?</summary>
-        <p>Una cuenta Primaria te permite jugar desde tu propia cuenta de PlayStation, conservar tus trofeos, guardar tu progreso y acceder a todas las funciones online. Es la opción más recomendada para quienes desean una experiencia completa.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿Qué es una cuenta Secundaria?</summary>
-        <p>Una cuenta Secundaria se utiliza iniciando sesión en la cuenta proporcionada al momento de la compra. Es una alternativa más económica y te permite disfrutar del juego siguiendo las instrucciones de instalación.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿Cómo funciona una reserva?</summary>
-        <p>Para reservar un juego solo debes realizar el pago de la reserva (por ejemplo, 30 Bs para GTA VI o Marvel's Wolverine). El monto se descuenta del precio final del juego y tendrás prioridad para recibirlo el día de su lanzamiento.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿Cuánto tarda la entrega?</summary>
-        <p>La mayoría de los pedidos se entregan entre 5 y 30 minutos después de confirmar el pago, dependiendo de la disponibilidad y el horario de atención. En lanzamientos o promociones, el tiempo puede variar ligeramente.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿Qué métodos de pago aceptan?</summary>
-        <p>Aceptamos transferencias bancarias y otros métodos de pago disponibles en Bolivia. Si tienes alguna duda, contáctanos por WhatsApp y te indicaremos las opciones disponibles.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿Los juegos tienen garantía?</summary>
-        <p>Sí. Todos nuestros juegos incluyen garantía por fallas de acceso atribuibles a la cuenta proporcionada. Si presentas algún inconveniente, nuestro equipo te brindará asistencia para solucionarlo.</p>
-        <p style="margin-top:10px; font-size:0.82rem; color:var(--dust);">Importante: la garantía no cubre problemas ocasionados por incumplir las instrucciones de uso, compartir la cuenta, cambiar los datos de acceso sin autorización o cualquier acción que infrinja las condiciones de uso indicadas al momento de la compra.</p>
-      </details>
-    </div>
-  </section>
-
-  <style>
-    .steps-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:22px; }
-    .step-card{
-      border:1px solid var(--line); border-radius:16px; padding:26px 22px;
-      background: rgba(255,255,255,0.02); position:relative; transition: transform .2s ease, border-color .2s ease;
-    }
-    .step-card:hover{ transform: translateY(-4px); border-color: var(--comet); }
-    .step-num{
-      width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center;
-      background: linear-gradient(100deg, var(--comet), var(--ion)); color:#fff; font-family:'Space Grotesk',sans-serif;
-      font-weight:700; margin-bottom:16px;
-    }
-    .step-card h4{ font-family:'Space Grotesk',sans-serif; font-size:1rem; margin-bottom:8px; }
-    .step-card p{ color:var(--dust); font-size:0.86rem; line-height:1.5; }
-
-    .faq-list{ max-width:760px; display:flex; flex-direction:column; gap:12px; }
-    .faq-item{
-      border:1px solid var(--line); border-radius:14px; padding:18px 22px;
-      background: rgba(255,255,255,0.02);
-    }
-    .faq-item summary{
-      cursor:pointer; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:0.98rem;
-      list-style:none; display:flex; align-items:center; justify-content:space-between;
-    }
-    .faq-item summary::-webkit-details-marker{ display:none; }
-    .faq-item summary::after{
-      content:"+"; color:var(--comet); font-size:1.3rem; font-weight:400; margin-left:12px; flex-shrink:0;
-      transition: transform .25s ease;
-    }
-    .faq-item[open] summary::after{ transform: rotate(45deg); }
-    .faq-item p{ color:var(--dust); font-size:0.88rem; line-height:1.6; margin-top:14px; }
-  </style>
-
-  <section id="contacto" class="reveal">
+  <section id="contacto">
     <div class="contact-wrap">
       <div>
         <div class="eyebrow">Contacto</div>
@@ -1324,21 +1164,6 @@ var VG_IMG = {
   // quitar el bloqueo de scroll una vez termina la animación de entrada
   const introDelay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 550 : 2100;
   setTimeout(() => { document.body.classList.remove('intro-active'); }, introDelay);
-
-  // animación de aparición al hacer scroll
-  if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-  } else {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in-view'));
-  }
 </script>
 
 </body>
